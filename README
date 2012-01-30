@@ -7,12 +7,12 @@ SQ Stream project
    cd lib && ruby sq_stream.rb -sv -e development --config $PWD/config/sq_stream.rb   
 
 3. post some events:
-   curl --data "{test: 1}" -X POST "http://0.0.0.0:9000/events?sig=3&app_id=4&social_id=mm"
-   curl --data "{test: 2}" -X POST "http://0.0.0.0:9000/events?sig=3&app_id=4&social_id=mm"
-   curl --data "{test: 3}" -X POST "http://0.0.0.0:9000/events?sig=3&app_id=4&social_id=mm"
+   curl --data "{test: 1}" -X POST "http://0.0.0.0:9000/events?sig=1&app_id=4&social_id=mm&user_id=1"
+   curl --data "{test: 2}" -X POST "http://0.0.0.0:9000/events?sig=2&app_id=4&social_id=mm&user_id=1"
+   curl --data "{test: 3}" -X POST "http://0.0.0.0:9000/events?sig=3&app_id=4&social_id=mm&user_id=1"
 
 4. get current events
-   curl -X GET "http://0.0.0.0:9000/events?sig=3&app_id=4&social_id=mm"
+   curl -X GET "http://0.0.0.0:9000/events?sig=3&app_id=4&social_id=mm&user_id=1"
 
    output: ["{test: 3}","{test: 2}","{test: 1}"]
 
