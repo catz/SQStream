@@ -44,7 +44,7 @@ class Stream < Goliath::API
     else env.logger.error "UNKNOWN METHOD #{env[Goliath::Request::REQUEST_METHOD]}" 
     end
     
-    [200, {}, resp]
+    [200, {'Content-Type' => 'application/json'}, resp]
   end
   
   private
